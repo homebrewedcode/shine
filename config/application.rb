@@ -27,10 +27,7 @@ module Shine
 
     # Don't generate system test files.
     config.generators.system_tests = nil
-<<<<<<< HEAD
     # Setup for SQL for storing SQL rather than Ruby
-=======
->>>>>>> fuzzy-search-feature
     config.active_record.schema_format = :sql
   end
 end

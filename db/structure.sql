@@ -40,8 +40,6 @@ CREATE TABLE ar_internal_metadata (
 
 
 --
-<<<<<<< HEAD
-=======
 -- Name: customers; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -76,7 +74,6 @@ ALTER SEQUENCE customers_id_seq OWNED BY customers.id;
 
 
 --
->>>>>>> fuzzy-search-feature
 -- Name: schema_migrations; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -127,8 +124,6 @@ ALTER SEQUENCE users_id_seq OWNED BY users.id;
 
 
 --
-<<<<<<< HEAD
-=======
 -- Name: customers id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -136,7 +131,6 @@ ALTER TABLE ONLY customers ALTER COLUMN id SET DEFAULT nextval('customers_id_seq
 
 
 --
->>>>>>> fuzzy-search-feature
 -- Name: users id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -152,8 +146,6 @@ ALTER TABLE ONLY ar_internal_metadata
 
 
 --
-<<<<<<< HEAD
-=======
 -- Name: customers customers_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -162,7 +154,6 @@ ALTER TABLE ONLY customers
 
 
 --
->>>>>>> fuzzy-search-feature
 -- Name: schema_migrations schema_migrations_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -179,8 +170,6 @@ ALTER TABLE ONLY users
 
 
 --
-<<<<<<< HEAD
-=======
 -- Name: index_customers_on_email; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -216,7 +205,6 @@ CREATE UNIQUE INDEX index_customers_on_username ON customers USING btree (userna
 
 
 --
->>>>>>> fuzzy-search-feature
 -- Name: index_users_on_email; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -238,12 +226,8 @@ SET search_path TO "$user", public;
 
 INSERT INTO "schema_migrations" (version) VALUES
 ('20171125181651'),
-<<<<<<< HEAD
-('20171125190251');
-=======
 ('20171125190251'),
 ('20171125193732'),
 ('20171125222336');
->>>>>>> fuzzy-search-feature
 
 
