@@ -1,9 +1,11 @@
 <header>
-  <h1><%= @hola %>, Welcome to Shine!</h1>
+  <h1>Rails is running in <%= Rails.env %> mode.</h1>
+  <h2>Welcome to Shine, <%= @current_user %>.</h2>
   <h2>We're using <%= Rails.version %></h2>
 </header>
 <section>
   <p>
     Future of Shine's Dashboard...
   </p>
+  <%= link_to "Log Out", destroy_user_session_path,  method: :delete %>
 </section>

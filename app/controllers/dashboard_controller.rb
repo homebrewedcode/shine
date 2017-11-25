@@ -1,5 +1,5 @@
 class DashboardController < ApplicationController
   def index
-    @hola = "Hello World"
+    @current_user = current_user.email
   end
 end
