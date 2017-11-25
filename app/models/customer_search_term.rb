@@ -1,3 +1,5 @@
+# I want to read up a bit more on building this query
+
 class CustomerSearchTerm
   attr_reader :where_clause, :where_args, :order
 
