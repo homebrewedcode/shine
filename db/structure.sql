@@ -40,6 +40,43 @@ CREATE TABLE ar_internal_metadata (
 
 
 --
+<<<<<<< HEAD
+=======
+-- Name: customers; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE customers (
+    id bigint NOT NULL,
+    first_name character varying NOT NULL,
+    last_name character varying NOT NULL,
+    email character varying NOT NULL,
+    username character varying NOT NULL,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: customers_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE customers_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: customers_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE customers_id_seq OWNED BY customers.id;
+
+
+--
+>>>>>>> fuzzy-search-feature
 -- Name: schema_migrations; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -90,6 +127,16 @@ ALTER SEQUENCE users_id_seq OWNED BY users.id;
 
 
 --
+<<<<<<< HEAD
+=======
+-- Name: customers id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY customers ALTER COLUMN id SET DEFAULT nextval('customers_id_seq'::regclass);
+
+
+--
+>>>>>>> fuzzy-search-feature
 -- Name: users id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -105,6 +152,17 @@ ALTER TABLE ONLY ar_internal_metadata
 
 
 --
+<<<<<<< HEAD
+=======
+-- Name: customers customers_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY customers
+    ADD CONSTRAINT customers_pkey PRIMARY KEY (id);
+
+
+--
+>>>>>>> fuzzy-search-feature
 -- Name: schema_migrations schema_migrations_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -121,6 +179,44 @@ ALTER TABLE ONLY users
 
 
 --
+<<<<<<< HEAD
+=======
+-- Name: index_customers_on_email; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE UNIQUE INDEX index_customers_on_email ON customers USING btree (email);
+
+
+--
+-- Name: index_customers_on_lower_email; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_customers_on_lower_email ON customers USING btree (lower((email)::text));
+
+
+--
+-- Name: index_customers_on_lower_first_name_varchar_pattern_ops; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_customers_on_lower_first_name_varchar_pattern_ops ON customers USING btree (lower((first_name)::text) varchar_pattern_ops);
+
+
+--
+-- Name: index_customers_on_lower_last_name_varchar_pattern_ops; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_customers_on_lower_last_name_varchar_pattern_ops ON customers USING btree (lower((last_name)::text) varchar_pattern_ops);
+
+
+--
+-- Name: index_customers_on_username; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE UNIQUE INDEX index_customers_on_username ON customers USING btree (username);
+
+
+--
+>>>>>>> fuzzy-search-feature
 -- Name: index_users_on_email; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -142,6 +238,12 @@ SET search_path TO "$user", public;
 
 INSERT INTO "schema_migrations" (version) VALUES
 ('20171125181651'),
+<<<<<<< HEAD
 ('20171125190251');
+=======
+('20171125190251'),
+('20171125193732'),
+('20171125222336');
+>>>>>>> fuzzy-search-feature
 
 
